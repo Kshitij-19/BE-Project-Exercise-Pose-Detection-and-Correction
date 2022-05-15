@@ -1,0 +1,120 @@
+verify that COCO model returns 18 keypoints
+
+installed pyrebase4
+
+problems 
+    plagiarism
+    cloud not used
+
+task
+
+    (X) photo stretched
+    (X) video stretched
+    
+    (X) image edit needs different button
+        (X) add button
+        (X) store image path in varible
+        (X) upload image to firebase storage 
+        (X) store token returned 
+        (X) url in file
+        (X) store localId in files
+
+    fitting everything in one frame
+        
+    
+    Login verification    
+
+    Main UI (window)
+        Profile (button)
+        choose videos (file browser)
+        video (frame)
+        process (button)
+
+    Profile (window)
+        image (label)
+        edit image (button)
+        name (label)
+        edit name (button)
+        height (label)
+        edit height (button)
+        weight (label)
+        edit weight (button)
+
+    Model User data
+        name
+        height
+        weight list of day:value pair
+        
+
+    push (done)
+    get
+    and update user data
+    
+from PIL import Image, ImageTk 
+pip install pillow
+
+    Project
+
+        
+        Edit Profile
+            add save button functionality
+                get name, email and mobno and print it
+            add image selection functionality        
+        display profile
+            taking image from url
+            uploading image to firebase
+                X taking image url from firebase
+                /Downloading Image from firebase
+            adding ectra attributes
+            imprving looks
+                padding
+        
+        
+        loop video
+        progress
+        PPT
+            removing cloud part 
+            adding screenshots
+                main screenshots
+                    fixing layout
+                    
+    Project
+        verify that COCO model returns 18 keypoints
+
+        installed pyrebase4
+
+        problems 
+            plagiarism
+            cloud not used
+
+        task
+            Login verification    
+
+            Main UI (window)
+                Profile (button)
+                choose videos (file browser)
+                video (frame)
+                process (button)
+
+            Profile (window)
+                image (label)
+                edit image (button)
+                name (label)
+                edit name (button)
+                height (label)
+                edit height (button)
+                weight (label)
+                edit weight (button)
+
+            Model User data
+                name
+                height
+                weight list of day:value pair
+                
+
+            push (done)
+            get
+            and update user data
+            
+        from PIL import Image, ImageTk 
+        pip install pillow

@@ -1,0 +1,72 @@
+{
+    "a": "a",
+    "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImNmNWQ4ZTc0ZjNjNDg2ZWU1MDNkNWVlYzkzYTEwMWM2NGJhY2Y3ZGEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG9zZS1jb3JyZWN0b3IiLCJhdWQiOiJwb3NlLWNvcnJlY3RvciIsImF1dGhfdGltZSI6MTY0NjI5MTk3MCwidXNlcl9pZCI6IkY4RXpKWFhOWVlUcUZlWHJodzBUN3JmbktvUTIiLCJzdWIiOiJGOEV6SlhYTllZVHFGZVhyaHcwVDdyZm5Lb1EyIiwiaWF0IjoxNjQ2MjkxOTcwLCJleHAiOjE2NDYyOTU1NzAsImVtYWlsIjoiYWJoaXNoZWtkaGFtZ3VuZGVAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYWJoaXNoZWtkaGFtZ3VuZGVAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.o8vQd1oKDAv_Q0ZYZdA1cAXohhLmjhIDtPT9P436UA1byemJtY8RcAMEA1pxUdXeTfkpMe8OH6yGZm5tN9dHLxJhvSn6O71mVQwt2XUZ9ZXmrxr-61nGtNZiu8Uj3j8oVyirarjgBqIwqhUfZ1Cyvp621aAxboVT2VoK6onbZANdJLUYQCtNuNlDe5tXOGJ1sjUIy8FoIgGzvgSt6EqjqtXkleIx5G4y-JjdIg57hS_m7MX9nQ6FbFtqU5UI7yNe8Gf6IFGNpGPTeLK4p4GbI0qCMpRCt-FJ_zCJlaFgPX4X55S1FgiYIDZYUf9V6Oar7iog8Odt0UxagQldTS9jOA",
+    "registered": True,
+    "refreshToken": "AIwUaOmSvbe00Xx6dDAQShgFPwmCOQzBLKf47VNYEHDkPcQBsMAk_0a6iWb1pU0WD7rV1OqRv7Wk7DCFxSpIQA1uS2RxJlKrqpUZOD_25TYRvWOh7hJVWoNAMN113Uw3p8QajeyM7ki9bIQ5n-P99YX3rUu_u0x_tKzh7adJWRoZLZKa8OTR0FM9y5nH93UQRdr4-fW7uB5yJbuvcAvN0S0KDVKb3k2aoA",
+    "expiresIn": "3600"
+}
+{
+    "kind": "identitytoolkit#GetAccountInfoResponse",
+    "users": [
+        {
+            "localId": "F8EzJXXNYYTqFeXrhw0T7rfnKoQ2",
+            "email": "abhishekdhamgunde@gmail.com",
+            "passwordHash": "UkVEQUNURUQ=",
+            "emailVerified": True,
+            "passwordUpdatedAt": 1643886545855,
+            "providerUserInfo": [
+                {
+                    "providerId": "password",
+                    "federatedId": "abhishekdhamgunde@gmail.com",
+                    "email": "abhishekdhamgunde@gmail.com",
+                    "rawId": "abhishekdhamgunde@gmail.com"
+                }
+            ],
+            "validSince": "1643886545",
+            "lastLoginAt": "1646291970153",
+            "createdAt": "1643886545855",
+            "lastRefreshAt": "2022-03-03T07: 19: 30.153Z"
+        }
+    ]
+}
+
+OrderedDict(
+    [
+        (
+            "-MxEdny8ZTqKuxrHGYDv",
+    {
+        "name": "Abhishek Dhamgunde"
+    }
+        ), 
+        (
+            "-MxEe2CMM0tAY_MgyEnm",
+    {
+        "name": "Abhishek Dhamgunde"
+    }
+        ), 
+        (
+            "-MxEe9kkZ3USqi7WaGq5",
+    {
+        "name": "Abhishek Dhamgunde"
+    }
+        )
+]
+)
+// returned by storage.child(...).put(...)
+{
+    "name": "profile_pictures/goku_dp.jpg",
+    "bucket": "pose-corrector.appspot.com",
+    "generation": "1647515435792184",
+    "metageneration": "1",
+    "contentType": "image/jpeg",
+    "timeCreated": "2022-03-17T11:10:35.894Z",
+    "updated": "2022-03-17T11:10:35.894Z",
+    "storageClass": "STANDARD",
+    "size": "102022",
+    "md5Hash": "iHuqrCsaKmYyDuqu4A2X8Q==",
+    "contentEncoding": "identity",
+    "contentDisposition": "inline; filename*=utf-8""goku_dp.jpg",
+    "crc32c": "GaUz0Q==",
+    "etag": "CLjuv6KBzfYCEAE=",
+    "downloadTokens": "8224dac3-97c8-45bd-9416-cf4755627f9c"
+}
