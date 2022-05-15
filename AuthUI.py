@@ -1,7 +1,10 @@
 #import modules
 
-# from asyncio import subprocess
+from asyncio import subprocess
+from logging import root
 from tkinter import *
+from tkinter import filedialog
+from PIL import Image,ImageTk
 import os
 #import User
 import json
@@ -50,14 +53,12 @@ def signin():
         print("invalid email or password")
 
 # Designing window for registration
-def register():
+def register(e):
     global register_screen
     register_screen = Toplevel(main_screen)
 
-    register_screen.title("Register")
-    register_screen.config(padx=120,pady=16,bg='white')
-    # register_screen.geometry("500x500")
- 
+
+
     global username
     global password
     global name
@@ -72,6 +73,19 @@ def register():
     phoneno = StringVar()
     weight = StringVar()
     height = StringVar()
+
+    main_screen.withdraw()
+
+    
+    register_screen.title("Register")
+    #register_screen.config(padx=120,pady=16,bg='white')
+    # register_screen.geometry("500x500")
+
+
+    register_screen.geometry("1360x780")
+    register_screen.resizable(False,False)
+
+
  
     Label(register_screen, text="Please enter details below",  bg="blue", width="30", height="2", font=("Calibri", 13)).pack()
     Label(register_screen, text="",bg='white').pack()
@@ -105,18 +119,30 @@ def register():
     Label(register_screen, text="",bg='white').pack()
     Button(register_screen, text="Register", width=10, height=1, bg="blue", command = register_user,pady=8).pack()
 
+    # register_screen.mainloop()
 
-# Designing window for login 
+
+def quit_file():
+    root.quit()
+
+
+# # Designing window for login 
 def login():
     global login_screen
     login_screen = Toplevel(main_screen)
     # login_screen = Tk()
-    login_screen.config(bg='white')
+    #login_screen.config(bg='white')
     login_screen.title("Login")
-    login_screen.geometry("300x250")
-    Label(login_screen, text="Please enter details below to login",bg='white').pack()
+    login_screen.geometry("1360x780")
+
+    login_screen.resizable(False,False)
+
+    Label(login_screen, text="Please enter details below to login").pack()
     Label(login_screen, text="",bg='white').pack()
+
+    
  
+
     global username_verify
     global password_verify
  
@@ -135,6 +161,9 @@ def login():
     password_login_entry.pack()
     Label(login_screen, text="",bg='white').pack()
     Button(login_screen, text="Login", width=10, height=1, command = login_verify).pack()
+
+    
+
     # main_screen.destroy()
 # Implementing event on register button
 
@@ -213,6 +242,7 @@ def register_user():
         # Label(success_window, text="Email verification link has\n been sent to your email account", fg="green", font=("calibri", 11)).pack()
         register_screen.destroy()
         messagebox.showinfo("Registration Successfull", "Email verification link has been sent to your email account")
+        main_screen.deiconify()
         # success_window.mainloop()
     except Exception as e:
 
@@ -281,7 +311,7 @@ def login_verify():
 def process_login(emailVerified):
     global login_success_screen
 
-    login_success_screen = Toplevel(login_screen)
+    # login_success_screen = Toplevel(login_screen)
     if emailVerified:
         # login_success_screen.title("Success")
         # login_success_screen.geometry("150x100")
@@ -295,9 +325,12 @@ def process_login(emailVerified):
         subprocess.call((f'py gui.py {email} {password}').split())
     else:
 
-        login_success_screen.title("Unverifies Email")
-        login_success_screen.geometry("150x100")
-        Label(login_success_screen, text="Email is not verified",bg='white').pack()
+        # login_success_screen.title("Unverifies Email")
+        # login_success_screen.geometry("150x100")
+        # Label(login_success_screen, text="Email is not verified",bg='white').pack()
+        messagebox.showerror("Unverified Email", "Email is not verified")
+
+
     # Button(login_success_screen, text="OK", command=delete_login_success).pack()
  
 # Designing popup for login invalid password
@@ -328,21 +361,76 @@ def delete_password_not_recognised():
 def delete_user_not_found_screen():
     user_not_found_screen.destroy()
  
- 
 # Designing Main(first) window
 def main_account_screen():
     global main_screen
     main_screen = Tk()
-    main_screen.config(bg='white')
-    main_screen.geometry("300x250")
+    #main_screen.config(bg='white')
+    #main_screen.geometry("1200x1050")
+
+    path = "login_background.png"
+
+    #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
+    img = ImageTk.PhotoImage(Image.open(path))
+
+    #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
+    panel = Label(main_screen, image = img).place(x=0,y=0,relwidth=1,relheight=1)
+
+    #The Pack geometry manager packs widgets in rows or columns.
+    #panel.pack(side = "bottom", fill = "both", expand = "yes")
+
+    
+    #register_screen.config(padx=120,pady=16,bg='white')
+    main_screen.geometry("1360x780")
+    # width= main_screen.winfo_screenwidth()
+    # heightt= main_screen.winfo_screenheight()
+    #setting tkinter window size
+    #main_screen.geometry("%dx%d" % (width, heightt))
+
+    main_screen.resizable(False,False)
+
     main_screen.title("Account Login")
-    Label(text="Select Your Choice", bg="blue", width="300", height="2", font=("Calibri", 13)).pack()
-    Label(text="",bg='white').pack()
-    Button(text="Login", height="2", width="30", command = login,bg='white').pack()
-    Label(text="",bg='white').pack()
-    Button(text="Register", height="2", width="30", command=register,bg='white').pack()
+
+
+    global username_verify
+    global password_verify
  
+    username_verify = StringVar()
+    password_verify = StringVar()
+ 
+    global username_login_entry
+    global password_login_entry
+ 
+    #Label(login_screen, text="Email * ",bg='white').pack()
+    #username_login_entry = Entry(login_screen, textvariable=username_verify)
+    #username_login_entry.pack()
+
+    def my_fun(*args):
+        my_w_child = Toplevel(register_screen)
+
+
+    Frame_login = Frame(main_screen,bg="white")
+    Frame_login.place(x=740,y=230,height=300,width=250)
+    Label(Frame_login,text="Please Login to Continue",bg='white', font=("bold", 13)).place(x=30,y=20)
+
+    lbl1 = Label(Frame_login,text="Email",font=("times new roman",13),fg="#686869",bg="white").place(x=15,y=70)
+    username_login_entry = Entry(Frame_login,font=("Goudy old style",13), textvariable=username_verify).place(x=15,y=100)
+
+    lbl2 = Label(Frame_login,text="Password",font=("times new roman",13),fg="#686869",bg="white").place(x=15,y=140)
+    username_login_entry = Entry(Frame_login,font=("Goudy old style",13), textvariable=password_verify,show= '*').place(x=15,y=170)
+
+
+    Button(Frame_login,text="Login", height="2", width="25",command = login_verify,bg="#0925DB",fg='white').place(x=15,y=225)
+    #Button(Frame_login,text="Register", height="2", width="30", command=register,bg="#0925DB",fg='white').place(x=15,y=125)
+    
+    lbl3 = Label(Frame_login,text="Don't Have an Account, ",font=("Goudy old style",10,"bold"),fg="#686869",bg="white").place(x=30,y=280)
+    lbl4 = Label(Frame_login,text="Click Here",font=("Goudy old style",10,"bold","underline"),fg="#0925DB",bg="white")
+    lbl4.place(x=160,y=280)
+    
+    lbl4.bind("<Button-1>",register)
+    
+
     main_screen.mainloop()
- 
+
  
 main_account_screen()
