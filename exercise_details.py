@@ -33,7 +33,7 @@ class SampleApp(tk.Tk):
 
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
-        
+        self.resizable(False,False)
 
         self.shared_data = {'Balance': tk.IntVar()}
 
@@ -81,8 +81,8 @@ def show_frame():
 
 class StartPage(tk.Frame):
 
-    def __init__(self, parent, controller, bg='#66CCFF', name="u"):
-        tk.Frame.__init__(self, parent, bg='#66CCFF',height=500,width=500)
+    def __init__(self, parent, controller, bg='#a3d3fe', name="u"):
+        tk.Frame.__init__(self, parent, bg='#a3d3fe',height=500,width=500)
         self.controller = controller
 
         self.controller.title('EXERCISE DETAILS')
@@ -94,7 +94,7 @@ class StartPage(tk.Frame):
         Exercise_label = tk.Label(self,
                                   text=exercise_name,
                                   font=('MS Serif', 30, 'bold'),
-                                  fg='#FFED41',bg='#66CCFF')
+                                  fg='#FFED41',bg='#a3d3fe')
         Exercise_label.pack()
         firebase = pyrebase.initialize_app(firebaseConfig)
 
@@ -107,7 +107,7 @@ class StartPage(tk.Frame):
                 exercise_no = tk.Label(self,
                                        text=p.key(),
                                        font=('orbitron', 15),
-                                       fg='black',bg='#66CCFF')
+                                       fg='black',bg='#a3d3fe')
                 exercise_no.pack(pady=15)
                 z = 0
                 imageFrame = tk.Frame(self, width=600, height=500)
@@ -161,18 +161,18 @@ class StartPage(tk.Frame):
 
                 # play_repeat()
 
-                button_frame = tk.Frame(self,bg='#66CCFF')
+                button_frame = tk.Frame(self,bg='#a3d3fe')
                 button_frame.pack(fill='both', expand=True)
                 for c, v in p.val().items():
                     exercise_step = tk.Label(button_frame,
                                              text=c,
                                              font=12,
-                                             fg='#2A2084',bg='#66CCFF')
+                                             fg='#2A2084',bg='#a3d3fe')
                     exercise_step.grid(row=z, column=0, padx=10)
                     exercise_det = tk.Label(button_frame,
                                             text=v,
                                             font=12,
-                                            fg='#2A2084',bg='#66CCFF')#FFED41
+                                            fg='#2A2084',bg='#a3d3fe')#FFED41
                     exercise_det.grid(row=z, column=1, sticky='w')
                     z = z+1
         except Exception as e:
@@ -195,7 +195,7 @@ class StartPage(tk.Frame):
 class MenuPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent, bg='#66CCFF',height=500,width=500)
+        tk.Frame.__init__(self, parent, bg='#a3d3fe',height=500,width=500)
         self.controller = controller
         title_frame = tk.Frame(self)
         title_frame.pack()
@@ -210,24 +210,24 @@ class MenuPage(tk.Frame):
         selection_label = tk.Label(self,
                                    text='Please make a selection',
                                    font=('orbitron', 13),
-                                   fg='#66CCFF',
-                                   bg='#66CCFF',
+                                   fg='#a3d3fe',
+                                   bg='#a3d3fe',
                                    anchor='w')
         selection_label.pack(fill='x')
 
-        button_frame = tk.Frame(self, bg='#66CCFF')
+        button_frame = tk.Frame(self, bg='#a3d3fe')
         button_frame.pack( expand=True,anchor='center',padx=260)
 
         def withdraw(exercise_name):
             controller.show_frame('StartPage', exercise_name)
 
         withdraw_button = tk.Button(button_frame,
-                                    text='Biceps', height=1,width=10, font=('MS Serif', 10, 'bold'), bg='#0080FF',foreground='#FFED41',
+                                    text='BICEPS', height=1,width=10, font=('sans serif', 12, 'bold'), bg='#0080FF',foreground='black', #foreground='#FFED41'
                                     command=lambda: withdraw('Biceps'),
                                     )
         withdraw_button.grid(padx=0,row=0, column=0, pady=0)
         leg_button = tk.Button(button_frame,
-                               text='legs', height=1,width=10, font=('MS Serif', 10, 'bold'), bg='#0080FF',foreground='#FFED41',
+                               text='LEGS', height=1,width=10, font=('sans serif', 12, 'bold'), bg='#0080FF',foreground='black',
                                command=lambda: withdraw('legs'),
                                )
         leg_button.grid(padx=8,row=0, column=1, pady=5)
@@ -236,11 +236,11 @@ class MenuPage(tk.Frame):
             controller.show_frame('DepositPage')
 
         deposit_button = tk.Button(button_frame,
-                                   text='Shoulder', height=1,width=10, font=('MS Serif', 10, 'bold'), bg='#0080FF',foreground='#FFED41',
+                                   text='SHOULDER', height=1,width=10, font=('sans serif', 12, 'bold'), bg='#0080FF',foreground='black',
                                    command=lambda: withdraw('Shoulder'))
         deposit_button.grid(padx=8,row=1, column=0, pady=5)
         triceps_button =tk.Button(button_frame,
-                                   text='Triceps', height=1,width=10, font=('MS Serif', 10, 'bold'), bg='#0080FF',foreground='#FFED41',
+                                   text='TRICEPS', height=1,width=10, font=('sans serif', 12, 'bold'), bg='#0080FF',foreground='black',
                                    command=lambda: withdraw('Triceps'),
                                    )
         triceps_button.grid(padx=8,row=2, column=1, pady=5)
@@ -249,12 +249,12 @@ class MenuPage(tk.Frame):
             controller.show_frame('BalancePage')
 
         balance_button =tk.Button(button_frame,
-                                   text='Chest', height=1,width=10, font=('MS Serif', 10, 'bold'), bg='#0080FF',foreground='#FFED41',
+                                   text='CHEST', height=1,width=10, font=('sans serif', 12, 'bold'), bg='#0080FF',foreground='black',
                                    command=lambda: withdraw('Chest')
                                    )
         balance_button.grid(padx=8,row=2, column=0, pady=5)
         back_button =tk.Button(button_frame,
-                                text='Back', height=1,width=10, font=('MS Serif', 10, 'bold'), bg='#0080FF',foreground='#FFED41',
+                                text='BACK', height=1,width=10, font=('sans serif', 12, 'bold'), bg='#0080FF',foreground='black',
                                 command=lambda: withdraw('Back'),
                                 )
         back_button.grid(padx=8,row=1, column=1, pady=5)
@@ -268,7 +268,7 @@ class MenuPage(tk.Frame):
 
 
         exit_button =tk.Button(button_frame,
-                                text='Exit', height=1,width=10, font=('MS Serif', 10, 'bold'), bg='#0080FF',foreground='#FFED41',
+                                text='Exit', height=1,width=10, font=('sans serif', 12, 'bold'), bg='#0080FF',foreground='black',
                                 command=exit,
                                 )
         exit_button.grid(padx=8,row=3, column=0,columnspan=2, pady=5,)

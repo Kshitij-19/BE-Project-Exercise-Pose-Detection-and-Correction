@@ -105,7 +105,7 @@ def display_profile(firebase, auth, db, storage,email,password,root):
 
     # profile_window = tk.Tk()
     profile_window = frame
-    profile_window.config(bg='#66CCFF')
+    profile_window.config(bg='#a3d3fe')
 
     user = auth.sign_in_with_email_and_password(
         email, password)
@@ -163,19 +163,19 @@ def display_profile(firebase, auth, db, storage,email,password,root):
         # print(type(user.val()))
         if user.key() == localID:
             name_label = tk.Label(
-                profile_window, text='Name:\t\t' + user.val()['name'], bg='#66CCFF')
+                profile_window, text='Name:\t\t' + user.val()['name'], bg='#a3d3fe')
             name_label.grid(row=2,column=1,sticky='w', padx=10, pady=4,columnspan=2)
             email_label = tk.Label(
-                profile_window, text='Email:\t\t' + user.val()['email'], bg='#66CCFF')
+                profile_window, text='Email:\t\t' + user.val()['email'], bg='#a3d3fe')
             email_label.grid(row=3,column=1,sticky='w', padx=10, pady=4,columnspan=2)
             mobno_label = tk.Label(
-                profile_window, text='Mob No:\t\t' + user.val()['mobno'], bg='#66CCFF')
+                profile_window, text='Mob No:\t\t' + user.val()['mobno'], bg='#a3d3fe')
             mobno_label.grid(row=4,column=1,sticky='w', padx=10, pady=4,columnspan=2)
             weight_label = tk.Label(
-                profile_window, text='Weight (kg):\t' + user.val()['weight'], bg='#66CCFF')
+                profile_window, text='Weight (kg):\t' + user.val()['weight'], bg='#a3d3fe')
             weight_label.grid(row=5,column=1,sticky='w', padx=10, pady=4,columnspan=2)
             height_label = tk.Label(
-                profile_window, text='Height (cm):\t' + user.val()['height'], bg='#66CCFF')
+                profile_window, text='Height (cm):\t' + user.val()['height'], bg='#a3d3fe')
             height_label.grid(row=6,column=1,sticky='w', padx=10, pady=4,columnspan=2)
             break
 

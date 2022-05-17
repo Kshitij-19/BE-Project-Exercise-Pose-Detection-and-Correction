@@ -58,7 +58,7 @@ heading_label.grid(columnspan=4,ipadx=500)
 #heading_label.place(anchor=CENTER)
 #heading_label.place(relx = 0.5, rely = 0.05, anchor = 'center')
 
-root.config(background='#66CCFF') #41EDFF
+root.config(background='#a3d3fe') #41EDFF
 lmain = ''
 label_frame = ''
 # label_hello_world = Label(root, text="Hello World")
@@ -163,7 +163,7 @@ Exercise performed correctly! Weight was lifted fully up, and upper arm did not 
 
         global lmain
         # Capture video frames
-        lmain = tk.Label(imageFrame, width=600, height=700, bg='#66CCFF')
+        lmain = tk.Label(imageFrame, width=600, height=700, bg='#a3d3fe')
         # lmain.grid(row=0, column=0)
         lmain.grid()
 
@@ -196,12 +196,12 @@ Exercise performed correctly! Weight was lifted fully up, and upper arm did not 
 # Exercise performed correctly!
 # Exercise performed correctly! Weight was lifted fully up, and upper arm did not move significantly.'''
         global label_frame
-        label_frame = tk.Frame(root, width=500, height=700, bg='#66CCFF')
+        label_frame = tk.Frame(root, width=500, height=700, bg='#a3d3fe')
         label_frame.grid(row=2, column=2, rowspan=5, padx=50, pady=70)
-        output_text = tk.Text(label_frame, border=0,fg='red',bg='#66CCFF',font=('MS Serif', 10, 'bold'),pady=5)
+        output_text = tk.Text(label_frame, border=0,fg='red',bg='#a3d3fe',font=('MS Serif', 10, 'bold'))
         output_text.insert(tk.END, res)
         output_text.pack()
-        # output_text2 = tk.Text(label_frame, border=0,fg='red',bg='#66CCFF')
+        # output_text2 = tk.Text(label_frame, border=0,fg='red',bg='#a3d3fe')
         # output_text2.insert(tk.END, feedback)
         # output_text2.pack()
         label_frame.grid_propagate(0)
@@ -293,30 +293,30 @@ image = ImageTk.PhotoImage( image=img)
 label6 = Label( image=image)
 label6.grid(row=1, column=1, pady=20, padx=10)
 
-profile_button = tk.Button(root, text="SEE PROFILE",
-                           command=display_profile, width=30, height=1, background='#0080FF')
+profile_button = tk.Button(root, text="SEE PROFILE", font=('sans serif', 12, 'bold'),
+                           command=display_profile, width=26, height=1, background='#0080FF')
 profile_button.grid(row=2, column=0, pady=0, padx=10)
 
 # Create select_exercise_optionmenudown menu
-select_exercise_optionmenu = tk.OptionMenu(root, clicked, *options,)
+select_exercise_optionmenu = tk.OptionMenu(root, clicked, *options)
 select_exercise_optionmenu.configure(
-    width=25, height=1, fg='black', bg='#0080FF')
+    width=26, height=1, fg='black', bg='#0080FF',font=('sans serif', 12, 'bold'))
 select_exercise_optionmenu.grid(row=3, column=0, pady=20, padx=10)
 select_exercise_optionmenu['menu'].config(
-    fg='white', bg='black', activebackground='black', activeforeground='#0080FF')
+    fg='white', bg='black',font=('sans serif', 12, 'bold'), activebackground='black', activeforeground='#0080FF')
 
 
 browse_button = tk.Button(root, text="SELECT VIDEO",
-                          command=guiInstance.browseFiles, width=30, height=1, background='#0080FF')
+                          command=guiInstance.browseFiles, width=26, height=1, background='#0080FF',font=('sans serif', 12, 'bold'))
 browse_button.grid(row=4, column=0, pady=20, padx=10)
 
 
 process_button = tk.Button(
-    root, text="PROCESS", command=on_click_process, width=30, height=1, background='#0080FF')
+    root, text="PROCESS", command=on_click_process, width=26, height=1, background='#0080FF',font=('sans serif', 12, 'bold'))
 process_button.grid(row=5, column=0, pady=20, padx=10)
 
 exercises_button = tk.Button(
-    root, text="EXERCISES", command=on_click_exercises, width=30, height=1, background='#0080FF')
+    root, text="EXERCISES", command=on_click_exercises, width=26, height=1, background='#0080FF',font=('sans serif', 12, 'bold'))
 exercises_button.grid(row=6, column=0, pady=20, padx=10)
 
 
@@ -325,7 +325,7 @@ exercises_button.grid(row=6, column=0, pady=20, padx=10)
 # width = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
 # height = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
 
-imageFrame = tk.Frame(root, width=600, height=500, bg='#66CCFF')#41EDFF
+imageFrame = tk.Frame(root, width=600, height=500, bg='#a3d3fe')#41EDFF  #a3d3fe
 imageFrame.grid(row=2, column=1, rowspan=5, padx=50, pady=0)
 #imageFrame.place(x=600,y=250)
 #imageFrame.grid_propagate(0)
