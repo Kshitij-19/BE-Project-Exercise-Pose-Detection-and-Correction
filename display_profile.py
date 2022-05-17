@@ -11,7 +11,7 @@ from turtle import width
 
 from matplotlib.pyplot import prism
 import User
-import pyautogui
+# import pyautogui
 import cv2 as cv
 import subprocess
 import numpy as np

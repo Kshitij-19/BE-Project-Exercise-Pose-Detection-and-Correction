@@ -7,7 +7,7 @@ from tkinter import font
 # from tkinter import filedialog
 from turtle import width
 import User
-import pyautogui
+# import pyautogui
 import cv2 as cv
 import subprocess
 import numpy as np
@@ -109,7 +109,7 @@ class gui:
         #     length=280
         # )
         # # place the progressbar
-        # pb.grid(column=0, row=5,padx=10, pady=20)
+        # pb.grid(column=0, row=5,padx=10, pady=30)
         # pb.start(20)
 
         output = '''Starting OpenPose demo...
@@ -219,7 +219,7 @@ def on_click_process():
         length=500
     )
     # place the progressbar
-    pb.grid(column=0, row=5, padx=10, pady=50)
+    pb.grid(column=0, row=5, padx=10, pady=30)
     pb.start(20)
     # time.sleep(7)
     threading.Thread(target=guiInstance.process_function).start()
@@ -291,33 +291,33 @@ factor = 130/img.height
 img = img.resize((int(img.width*factor), int(img.height*factor)), Image.ANTIALIAS)
 image = ImageTk.PhotoImage( image=img)
 label6 = Label( image=image)
-label6.grid(row=1, column=1, pady=20, padx=10)
+label6.grid(row=1, column=1, pady=30, padx=10)
 
 profile_button = tk.Button(root, text="SEE PROFILE",
                            command=display_profile, width=30, height=1, background='#0080FF')
-profile_button.grid(row=2, column=0, pady=0, padx=10)
+profile_button.grid(row=2, column=0, pady=(0,45), padx=10)
 
 # Create select_exercise_optionmenudown menu
 select_exercise_optionmenu = tk.OptionMenu(root, clicked, *options,)
 select_exercise_optionmenu.configure(
     width=25, height=1, fg='black', bg='#0080FF')
-select_exercise_optionmenu.grid(row=3, column=0, pady=20, padx=10)
+select_exercise_optionmenu.grid(row=3, column=0, pady=45, padx=10)
 select_exercise_optionmenu['menu'].config(
     fg='white', bg='black', activebackground='black', activeforeground='#0080FF')
 
 
 browse_button = tk.Button(root, text="SELECT VIDEO",
                           command=guiInstance.browseFiles, width=30, height=1, background='#0080FF')
-browse_button.grid(row=4, column=0, pady=20, padx=10)
+browse_button.grid(row=4, column=0, pady=45, padx=10)
 
 
 process_button = tk.Button(
     root, text="PROCESS", command=on_click_process, width=30, height=1, background='#0080FF')
-process_button.grid(row=5, column=0, pady=20, padx=10)
+process_button.grid(row=5, column=0, pady=45, padx=10)
 
 exercises_button = tk.Button(
     root, text="EXERCISES", command=on_click_exercises, width=30, height=1, background='#0080FF')
-exercises_button.grid(row=6, column=0, pady=20, padx=10)
+exercises_button.grid(row=6, column=0, pady=45, padx=10)
 
 
 # capture video with opencv

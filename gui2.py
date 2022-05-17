@@ -6,7 +6,7 @@ from tkinter import ttk
 # from tkinter import filedialog
 from turtle import width
 import User
-import pyautogui
+# import pyautogui
 import cv2 as cv
 import subprocess
 import numpy as np
