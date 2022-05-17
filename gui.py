@@ -342,7 +342,6 @@ process_button.grid(row=5, column=0, pady=45, padx=10)
 exercises_button = tk.Button(
     root, text="EXERCISES", command=on_click_exercises, width=30, height=1, background='#0080FF')
 exercises_button.grid(row=6, column=0, pady=45, padx=10)
->>>>>>> b0c8b7d51793c376e051b9746063310ab0b8051c
 
 
 # capture video with opencv
